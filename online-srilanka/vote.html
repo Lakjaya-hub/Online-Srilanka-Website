@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html>
+<head>
+
+	<title></title>
+	<script>
+function getVote(int) {
+  if (window.XMLHttpRequest) {
+    // code for IE7+, Firefox, Chrome, Opera, Safari
+    xmlhttp=new XMLHttpRequest();
+  } else {  // code for IE6, IE5
+    xmlhttp=new ActiveXObject("Microsoft.XMLHTTP");
+  }
+  xmlhttp.onreadystatechange=function() {
+    if (this.readyState==4 && this.status==200) {
+      document.getElementById("poll").innerHTML=this.responseText;
+    }
+  }
+  xmlhttp.open("GET","in.php?vote="+int,true);
+  xmlhttp.send();
+}
+</script>
+	<style type="text/css">
+		#log{width: 80%;
+			height: 200px;
+			padding-left: 10%;
+		}
+	  #tab{ margin-left: 40%;`
+	  	width:400px;
+	  	height: 1000px;
+	    border-color: gold;
+	    border-radius: 40;}
+
+
+
+
+	  
+	
+	</style>
+
+
+</head>
+<body background="bg.png">
+<img src="logo.png" id="log">
+<marquee>  <pre> <h2> Welcome To Online Voting System in Srilanka          Welcome To Online Voting System in Srilanka            Welcome To Online Voting System in Srilanka         </h2></pre>
+	</marquee>
+	<div id="poll">
+<form >
+  <div class="container">
+    <h1>NOW YOU CAN REGISTER ON WWW.E-VOTING.LK</h1>
+    <p>Fill This Forum And Submit After That We Can Get Your Deatails</p>
+ 
+<table border="6" id="tab">
+
+	
+	<tr> <td> <img src="1.png"> </td> <td><input type="radio" name="vote" value="0" onclick="getVote(this.value)">
+  </td>  </tr>
+	<tr> <td> <img src="2.png"> </td> <td><input type="radio" name="vote" value="1" onclick="getVote(this.value)">
+  </td>  </tr>
+	<tr> <td> <img src="3.png" style="margin-left: 20%;"> </td> <td> <input type="radio" name="vote" value="2" onclick="getVote(this.value)">
+ </td>  </tr><input type="radio" name="vote" value="3" onclick="getVote(this.value)">
+ </td>  </tr>
+	<tr> <td> <img src="5.png"> </td> <td> <input type="radio" name="vote" value="4" onclick="getVote(this.value)">
+ </td>  </tr>
+
+</div>
+
+</table>
+  
+</form>
+
+</body>
+</html>
